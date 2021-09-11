@@ -388,6 +388,7 @@ export default {
     const { options, process } = loadProcess(this.options, source);
     this.options = options;
     this.process = process;
+    this.ua=options.ua
   },
 
   computed: {
@@ -606,6 +607,7 @@ function loadProcess(options, source, isCollection = false) {
     ...options,
     name: source.name,
     icon: source.icon,
+    ua: source.ua
   };
   if (isCollection) {
     options.subscriptions = source.subscriptions;
